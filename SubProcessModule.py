@@ -8,4 +8,10 @@ subprocess.call('ls -l | grep -i file',shell=True)
 
 print(subprocess.check_output('ls -l | grep -i file',shell=True))
 
+
+#subprocess.call('python3.6 ../ping.py "Check it out this man"',shell=True)
 #######################
+#
+subprocess.call('yum install tree -y',shell=True)
+
+#!/usr/bin/python3.6
