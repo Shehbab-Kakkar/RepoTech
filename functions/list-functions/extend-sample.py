@@ -4,7 +4,7 @@ b = [3, 4]
 c = ['hello','fully']   #List
 d = ('one','two')   #tuples
 f = {'fully', 10}  #set
-a += b
+a += b   #Adding List and List
 a = a + c
 print(a)
 a.extend(d)  # extending tuples to the list
