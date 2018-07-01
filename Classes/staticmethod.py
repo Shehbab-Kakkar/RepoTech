@@ -17,3 +17,10 @@ employee.welcomeMessage()
 #declarator are function which extend another function funcationlity
 '''staticmethod  ignore the binding of object'''
 #statemethod ignore self parameter 
+
+#####################################
+'''static method  |   instance method '''
+
+#@staticmethod        #def employeeDetails(self)
+
+#####################################
