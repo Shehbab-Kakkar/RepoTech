@@ -14,7 +14,6 @@ employee.welcomeMessage()
 
 
 #declarator called statemethod
-#declarator are function which task another function and extends 
-#there functionality
+#declarator are function which extend another function funcationlity
 '''staticmethod  ignore the binding of object'''
 #statemethod ignore self parameter 
