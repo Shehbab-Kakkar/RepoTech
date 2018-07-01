@@ -1,6 +1,6 @@
 #!/usr/bin/python3.6
 class Company:
-      def employee(self):
+      def employee(self):  '''self is reference to object itself'''
            pass
      
 company01 = Company()
