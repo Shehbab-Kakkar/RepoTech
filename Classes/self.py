@@ -14,3 +14,5 @@ object = company
 
 Company.employee(company01)
 '''
+
+Company.employee(company01)
