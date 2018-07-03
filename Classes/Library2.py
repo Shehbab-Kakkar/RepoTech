@@ -27,8 +27,8 @@ class Customer:
           self.book = input("Enter the name of the book which you want to return")
           return self.book
 books_list = input("Enter book names: ")
-print(list(books_list))
-library = Library(books_list)
+list = books_list.split()
+library = Library(list)
 customer = Customer()
 library.displayAvailableBooks()
 while True:
