@@ -1,5 +1,5 @@
 #!/usr/bin/python3.6
-path = "/home/text.csv"
+path = "/home/skakkar/text.csv"
 #file = open(path)
 #for line in file:
 #       print(line)
