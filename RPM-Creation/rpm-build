@@ -1,0 +1,72 @@
+Build an rpm
+
+yum -y install yum install rpmdevtools rpm-build
+
+rpmdev-setuptree     #command to create rpm build directory structture
+
+centos7 ~]$ tree -A rpmbuild/
+rpmbuild/
+├── BUILD
+├── RPMS
+├── SOURCES
+├── SPECS
+└── SRPMS
+
+Source creations:-
+
+user$  cd /home/user/rpmbuild/SOURCES/
+ 
+SOURCES$ mkdir -p tuprepo-1/etc/yum.repos.d/
+
+SOURCES$ tar -cvzf tuprepo-1.tar.gz tuprepo-1
+
+SOURCES]$ ls
+tuprepo-1  tuprepo-1.tar.gz
+
+
+Spec file creation:-
+
+SOURCES]$ cd ../SPECS/
+
+ SPECS]$ pwd
+/home/user/rpmbuild/SPECS
+
+SPECS]$ rpmdev-newspec tuprepo.spec
+tuprepo.spec created; type minimal, rpm version >= 4.11.
+
+
+---------------------------
+SPECS]# cat tuprepo.spec
+Name:           tuprepo
+Version:        1
+Release:        0
+Summary:        Network repo test centos server
+
+License:        Not required
+URL:            https://testing.example.com
+Source0:        tuprepo-1.tar.gz
+
+
+%description
+Created sample repo for testing purpose
+
+%prep
+%setup -q
+
+%install
+mkdir -p "$RPM_BUILD_ROOT"
+cp -R * "$RPM_BUILD_ROOT"
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%files
+%defattr(-,root,root,-)
+/etc/yum.repos.d/
+-----------------------------------------
+
+#rpmbuild -v -bb rpmbuild/SPECS/tuprepo.spec
+
+
+
+
