@@ -1,0 +1,30 @@
+#https://stackoverflow.com/questions/42758996/rpm-package-from-python-source
+#https://chriswarrick.com/blog/2014/09/15/python-apps-the-right-way-entry_points-and-scripts/
+
+First step:-
+
+1) Create a setup file with code
+
+setup.py:
+
+from distutils.core import setup
+setup(name='MyScript',
+      version='0.0.1',
+      author='ABC XYZ',
+      author_email='abc@xyz.com',
+      packages=['MyScript']
+      )
+
+2) 'MyScript' is the directory  containing python code
+3) python setup.py bdist_rpm   #command will create rpm under dist
+
+4) 'dist' contain the rpm
+
+RPM-Creation]# ll ../../dist/MyScript-0.0.1*
+-rw-r--r-- 1 root root 4496 Jul  5 11:55 ../../dist/MyScript-0.0.1-1.noarch.rpm
+-rw-r--r-- 1 root root 3143 Jul  5 11:55 ../../dist/MyScript-0.0.1-1.src.rpm
+-rw-r--r-- 1 root root 1050 Jul  5 11:55 ../../dist/MyScript-0.0.1.tar.gz
+
+5) 'build' contain the rpm build information
+
+
